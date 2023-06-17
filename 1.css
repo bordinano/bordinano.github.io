@@ -1,0 +1,40 @@
+*
+{
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", sans-serif;
+    box-sizing: border-box;
+}
+.container {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(good.png);
+    background-size: cover;
+    background-position: center;
+    padding: 0 8%;
+    position: relative;
+}
+
+
+.content {
+    top: 50%;
+    position: absolute;
+    transform: translateY(-50%);
+    color:rgba(255, 163, 43, 0.979);
+}
+.content h1{
+    font-size: 64px;
+    font-weight: 600px;
+    
+}
+.launch-time{
+    display: flex;
+}
+.launch-time div{
+    flex-basis: 100px;
+}
+.launch-time div p{
+    font-size: 60px;
+    margin-bottom: -10px;
+}
+

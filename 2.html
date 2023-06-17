@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Quiz</title>
+  <link rel="stylesheet" type="text/css" href="2.css">
+  <style>
+    .container {
+      opacity: 1;
+      transition: opacity 2s, ease;
+    }
+
+    .container.fade-out {
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Ano meron sa June 19 2023?</h1>
+  
+    <input type="text" id="answer-input" placeholder="Enter your answer">
+    <button id="check-answer-btn">Check Answer</button>
+  </div>
+
+  <script>
+    const checkAnswerBtn = document.getElementById('check-answer-btn');
+    const container = document.querySelector('.container');
+    checkAnswerBtn.addEventListener('click', function() {
+      const answerInput = document.getElementById('answer-input');
+      const userAnswer = answerInput.value.trim().toLowerCase();
+
+      if (userAnswer === '1st anniversary') {  // Replace 'correct' with the actual correct answer
+        container.classList.add('fade-out'); // Apply the fade-out class to initiate the transition
+
+        setTimeout(function() {
+          window.location.href = 'portfolio.html'; // Redirect to the next HTML page after the transition
+        }, 500); // Adjust the delay to match the transition duration in CSS
+      } else {
+        alert('Incorrect answer. Please try again.');
+      }
+
+      answerInput.value = ''; // Clear the input field
+    });
+  </script>
+</body>
+</html>

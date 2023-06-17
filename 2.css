@@ -1,0 +1,32 @@
+body {
+  background-image: url('good.png');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.quiz-container {
+  max-width: 400px;
+  padding: 20px;
+  text-align: center;
+}
+
+h1 {
+  font-size: 24px;
+  margin-bottom: 3px;
+  color: rgb(0, 0, 0);
+  font-weight: bolder;
+
+}
+
+p {
+  margin-bottom: 10px;
+}
+
+input[type="text"],
+button {
+  margin-top: 10px;
+}
