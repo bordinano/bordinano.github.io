@@ -1,0 +1,267 @@
+<html>
+<head>
+    <title>Main website</title>
+    <link rel="stylesheet" href="33.css">
+    <style>
+        .popup {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-color: rgba(0, 0, 0, 0.5);
+          justify-content: center;
+          align-items: center;
+          z-index: 9999; /* Adjust the z-index to make sure it appears above the text */
+        }
+
+        .popup-button {
+            width: 200px;
+            background-color:  #ff99ff;
+            color: #698cff;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 0px;
+            text-align: center;
+            font-weight: bold;
+            font-size: 16px;
+            cursor: pointer;
+            background: transparent;
+            overflow: hidden;
+        }
+
+        .popup-button:hover {
+            background-color:  #ffabff;}
+        
+        .popup-content {
+          background-image: url(stars-galaxy.gif);
+          padding: 20px;
+          border-radius: 5px;
+        }
+        
+        .popup h2 {
+          margin-bottom: 10px;
+        }
+        
+        .popup p {
+          margin-bottom: 20px;
+        }
+        
+        .popup button {
+          padding: 10px 10px;
+          background-color: #284fff;
+          color: #08f7ff;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+        }
+
+        .player-container {
+            display: flex;
+            align-items: center;
+            margin: 20px;
+            position: fixed;
+            left: 20px;
+            bottom: 20px;
+        }
+
+        .player-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .player-controls button {
+            margin: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <div class="navbar">
+            <button class="popup-button" onclick="openBoxPopup()"><span1></span1>Box</button>
+            <button class="popup-button" onclick="openLetterPopup()"><span1></span1>Letter</button>
+        </div>
+    </div>
+
+    <div id="box-popup" class="popup">
+        <div class="popup-content">
+            <button onclick="closeBoxPopup()">Exit</button> <!-- Added exit button -->
+            <canvas id="canvas"></canvas>
+            <div id="merrywrap" class="merrywrap">
+                <div class="giftbox">
+                    <div class="cover">
+                        <div></div>
+                    </div>
+                    
+                    <div class="box"></div>
+                </div>
+                
+                <div class="icons">
+                    <div class="row">
+                        <span>H</span>
+                        <span>a</span>
+                        <span>p</span>
+                        <span>p</span>
+                        <span>y</span>
+                        
+                    </div>
+                    <div class="row">
+                        <span>A</span>
+                        <span>n</span>
+                        <span>n</span>
+                        <span>i</span>
+                        <span>v</span>
+                        <span>e</span>
+                        <span>r</span>
+                        <span>s</span>
+                        <span>a</span>
+                        <span>r</span>
+                        <span>y</span>
+                    </div>
+                    
+                    <div class="row">
+                        <span>K</span>
+                        <span>a</span>
+                        <span>h</span>
+                        <span>t</span>
+                     
+                    </div>
+                    
+                </div>
+            </div>
+            <script src="3.js"></script>
+           
+        </div>
+    </div>
+
+    <div id="letter-popup" class="popup">
+        <div class="popup-content">
+            <button onclick="closeLetterPopup()">Exit</button> <!-- Added exit button -->
+            
+            <div class="birthdayCard">
+                <div class="cardFront">
+                  <h3 class="happy">HAPPY ANNIVERSARY</h3>
+                  <div class="balloons">
+                    <div class="balloon-1"></div>
+                    <div class="balloon-2"></div>
+                    <div class="balloon-3"></div>
+                    <div class="balloon-4"></div>
+                  </div>
+                </div>
+                <div class="cardInside">
+                  <h3 class="back">HAPPY ANNIVERSARY</h3>
+                  <p>Dear My Love Kahtrissa,</p>
+                  <p>
+                    It has already been a year since we become lovers even though we have had ups and downs in our journey. I am grateful we are still together 
+                    and I hope we will be still together in the future. 
+                  </p>
+                <p class="name">YourLover, Andrei</p>
+                </div>
+              </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>PLEASE CLICK THE BUTTONS</h1>
+        <p4>to see the content</p4>
+    </div>
+
+
+    <div class="music-player">
+        <div id="musicTitle"></div>
+        <div>
+          <button id="playButton" class="button">Play</button>
+          <button id="pauseButton" class="button">Pause</button>
+          <button id="nextButton" class="button">Next</button>
+        </div>
+    </div>
+
+    <div id="audioplayer"> 
+        <audio id="myAudio" autoplay>
+        <source src="main web/music/A Million Dreams.mp3" type="audio/mpeg">
+        <source src="main web/music/Rewrite The Stars.mp3" type="audio/mpeg">
+        <source src="main web/music/Enchanted.mp3" type="audio/mpeg">
+        <source src="main web/music/Crush.mp3" type="audio/mpeg">
+        <source src="main web/music/Mahika.mp3" type="audio/mpeg">
+        <source src="main web/music/tahanan.mp3" type="audio/mpeg">
+        <source src="main web/music/Night Changes.mp3" type="audio/mpeg">
+      </audio>
+    </div>
+
+    <script>
+        function openBoxPopup() {
+            var popup = document.getElementById("box-popup");
+            popup.style.display = "flex";
+        }
+
+        function closeBoxPopup() {
+            var popup = document.getElementById("box-popup");
+            popup.style.display = "none";
+        }
+
+        function openLetterPopup() {
+            var popup = document.getElementById("letter-popup");
+            popup.style.display = "flex";
+        }
+
+        function closeLetterPopup() {
+            var popup = document.getElementById("letter-popup");
+            popup.style.display = "none";
+        }
+
+  
+
+
+
+        var audio = document.getElementById("myAudio");
+    var playButton = document.getElementById("playButton");
+    var pauseButton = document.getElementById("pauseButton");
+    var nextButton = document.getElementById("nextButton");
+    var musicTitle = document.getElementById("musicTitle");
+
+    var songs = audio.getElementsByTagName("source");
+    var currentSongIndex = 0;
+
+    // Function to update the music title
+    function updateMusicTitle() {
+      var currentSong = songs[currentSongIndex];
+      musicTitle.textContent = currentSong.getAttribute("src");
+    }
+
+    playButton.addEventListener("click", function() {
+      audio.play();
+    });
+
+    pauseButton.addEventListener("click", function() {
+      audio.pause();
+    });
+
+    nextButton.addEventListener("click", function() {
+      currentSongIndex++;
+      if (currentSongIndex >= songs.length) {
+        currentSongIndex = 0;
+      }
+      audio.src = songs[currentSongIndex].src;
+      audio.play();
+      updateMusicTitle();
+    });
+
+    audio.addEventListener("ended", function() {
+      currentSongIndex++;
+      if (currentSongIndex >= songs.length) {
+        currentSongIndex = 0;
+      }
+      audio.src = songs[currentSongIndex].src;
+      audio.play();
+      updateMusicTitle();
+    });
+
+    // Update music title on initial load
+    updateMusicTitle();
+</script>
+
+</body>
+</html>
