@@ -31,7 +31,14 @@ button {
   margin-top: 10px;
 }
 
-.peace {
-  position: center
+.poto {
+  position: relative;
+}
 
+.peace {
+  position: absolute;
+  top: 1cm;
+  left: -10cm;
+  right: ;
+  opacity: 0.8;
 }
