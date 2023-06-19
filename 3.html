@@ -225,11 +225,7 @@
     var songs = audio.getElementsByTagName("source");
     var currentSongIndex = 0;
 
-    // Function to update the music title
-    function updateMusicTitle() {
-      var currentSong = songs[currentSongIndex];
-      musicTitle.textContent = currentSong.getAttribute("src");
-    }
+  
 
     playButton.addEventListener("click", function() {
       audio.play();
